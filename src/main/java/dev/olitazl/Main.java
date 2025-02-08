@@ -10,19 +10,19 @@ public class Main {
         DecisionEngine<Person> engine = new DecisionEngine<>();
 
         engine.addGroup(new Group<>("Young & Low Income", 
-            Arrays.asList(p -> p.age < 30, p -> p.income < 50000), 
+            Arrays.asList(p -> p.getAge() < 30, p -> p.getIncome() < 50000),
             1)); // Lower priority
 
         engine.addGroup(new Group<>("Young & High Income", 
-            Arrays.asList(p -> p.age < 30, p -> p.income >= 50000), 
+            Arrays.asList(p -> p.getAge() < 30, p -> p.getIncome() >= 50000),
             2)); // Higher priority
 
         engine.addGroup(new Group<>("Old & Low Income", 
-            Arrays.asList(p -> p.age >= 30, p -> p.income < 50000), 
+            Arrays.asList(p -> p.getAge() >= 30, p -> p.getIncome() < 50000),
             1)); // Lower priority
 
         engine.addGroup(new Group<>("Old & High Income", 
-            Arrays.asList(p -> p.age >= 30, p -> p.income >= 50000), 
+            Arrays.asList(p -> p.getAge() >= 30, p -> p.getIncome() >= 50000),
             2)); // Higher priority
 
         // Test case: 28-year-old earning $60,000

@@ -1,11 +1,11 @@
 package dev.olitazl;
 
-class Person {
-    int age;
-    int income;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
 
-    public Person(int age, int income) {
-        this.age = age;
-        this.income = income;
-    }
+@Getter
+@AllArgsConstructor
+class Person {
+    private int age;
+    private int income;
 }
